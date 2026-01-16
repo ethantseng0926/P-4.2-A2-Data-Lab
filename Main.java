@@ -55,7 +55,7 @@ public class Main {
         System.out.println("Average Nutrition Density: " + String.format("%.2f", mean));
         System.out.println("Most Densely Nutritious Cereal: " + topCereal.getName());
         System.out.println("Max Density Value: " + String.format("%.2f", topCereal.getNutritionDensity()));
-        System.out.println("\nANSWER: The most densely nutritious cereal is " + 
+        System.out.println("\nANSWER: The most densely nutritious cereal is " + topCereal.getName() + ", which is " +
                            String.format("%.2f", zScore) + " standard deviations above the average.");
     }
 }
