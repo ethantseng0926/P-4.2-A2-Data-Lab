@@ -35,16 +35,21 @@ public class Cereal {
         this.rating = rating;
     }
 
-    // Returns the "Nutrition Density" (Rating per Cup)
+    /**
+     * Calculates Nutrition Density (Nutrition per Volume).
+     * Justification: Nutritious means maximizing protein, fiber, potassium, carbs, and vitamins 
+     * while minimizing calories, sugar, sodium, and fat.
+     */
     public double getNutritionDensity() {
-        return this.rating / this.cups;
+        double goodNutrients = protein + fiber + potassium + carbohydrates + vitamins;
+        double badNutrients = calories + sugar + sodium + fat;
+        return (goodNutrients - badNutrients) / cups;
     }
 
     public String getName() { return name; }
 
     @Override
     public String toString() {
-        return String.format("%-25s | Density: %.2f", name, getNutritionDensity());
+        return String.format("%-30s Score: %10.2f", name, getNutritionDensity());
     }
 }
-
